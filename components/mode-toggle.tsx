@@ -9,8 +9,8 @@ export function ModeToggle() {
   const { mode, setMode } = useDashboard();
 
   return (
-    <div className="flex items-center space-x-2 sm:space-x-4 rounded-lg border p-1 sm:p-2">
-      <div className="flex items-center space-x-1 sm:space-x-2">
+    <div className="flex items-center space-x-2 rounded-lg border p-1 sm:p-2">
+      <div className="flex items-center space-x-1">
         <Sailboat
           className={`h-4 w-4 ${
             mode === "captain" ? "text-primary" : "text-muted-foreground"
@@ -18,7 +18,7 @@ export function ModeToggle() {
         />
         <Label
           htmlFor="mode-toggle"
-          className={`text-xs sm:text-sm font-medium ${
+          className={`text-xs font-medium ${
             mode === "captain" ? "text-primary" : "text-muted-foreground"
           } hidden sm:inline`}
         >
@@ -32,7 +32,7 @@ export function ModeToggle() {
         onCheckedChange={(checked) => setMode(checked ? "owner" : "captain")}
       />
 
-      <div className="flex items-center space-x-1 sm:space-x-2">
+      <div className="flex items-center space-x-1">
         <Anchor
           className={`h-4 w-4 ${
             mode === "owner" ? "text-primary" : "text-muted-foreground"
@@ -40,7 +40,7 @@ export function ModeToggle() {
         />
         <Label
           htmlFor="mode-toggle"
-          className={`text-xs sm:text-sm font-medium ${
+          className={`text-xs font-medium ${
             mode === "owner" ? "text-primary" : "text-muted-foreground"
           } hidden sm:inline`}
         >

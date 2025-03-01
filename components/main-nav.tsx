@@ -43,7 +43,8 @@ export function MainNav({ mode }: MainNavProps) {
             )}
           >
             <route.icon className="h-4 w-4" />
-            {route.label}
+            <span className="hidden md:inline">{route.label}</span>
+            <span className="md:hidden">{route.label.split(" ")[0]}</span>
           </Button>
         </Link>
       ))}
