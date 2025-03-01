@@ -1,18 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import CaptainDashboard from "@/components/captain-dashboard";
 import OwnerDashboard from "@/components/owner-dashboard";
+import { useDashboard } from "@/contexts/dashboard-context";
 
 export default function DashboardPage() {
-  const [mode] = useState(() =>
-    typeof window !== "undefined"
-      ? (localStorage.getItem("userRole") as "captain" | "owner")
-      : "captain"
-  );
-  const [userName] = useState(() =>
-    typeof window !== "undefined" ? localStorage.getItem("userName") : ""
-  );
+  const { mode, userName } = useDashboard();
 
   return (
     <div className="space-y-4">
