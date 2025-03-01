@@ -45,7 +45,7 @@ export default function JobsPage() {
   return (
     <SidebarProvider>
       <div className="space-y-6">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col items-start justify-between">
           <div>
             <h2 className="text-3xl font-bold tracking-tight">Job Board</h2>
             <p className="text-muted-foreground">

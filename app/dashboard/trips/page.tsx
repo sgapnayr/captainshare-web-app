@@ -54,7 +54,7 @@ export default function TripsPage() {
   return (
     <SidebarProvider>
       <div className="space-y-6">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col items-start justify-between">
           <div>
             <h2 className="text-3xl font-bold tracking-tight">Trips</h2>
             <p className="text-muted-foreground">
@@ -63,7 +63,9 @@ export default function TripsPage() {
                 : "View your upcoming assigned trips"}
             </p>
           </div>
-          {userRole === "owner" && <Button>Import from FareHarbor</Button>}
+          {userRole === "owner" && (
+            <Button className="mt-4">Import from FareHarbor</Button>
+          )}
         </div>
 
         <div className="grid gap-4">
