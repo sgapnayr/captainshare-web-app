@@ -9,12 +9,11 @@ export default function OwnerDashboard() {
   return (
     <div className="space-y-8">
       <div className="flex flex-wrap gap-4">
-        <Button>Import from FareHarbor</Button>
+        <Link href="/dashboard/jobs">
+          <Button>Post a Job</Button>
+        </Link>
         <Link href="/dashboard/trips">
           <Button variant="secondary">Manage Trips</Button>
-        </Link>
-        <Link href="/dashboard/jobs">
-          <Button variant="secondary">Post a Job</Button>
         </Link>
       </div>
 
