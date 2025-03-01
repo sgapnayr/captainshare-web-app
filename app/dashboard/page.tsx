@@ -14,6 +14,7 @@ import {
   SidebarHeader,
   SidebarProvider,
 } from "@/components/ui/sidebar";
+import { Search } from "@/components/search";
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -54,12 +55,10 @@ export default function DashboardPage() {
 
         {/* Main Content */}
         <div className="flex flex-1 flex-col">
-          <header className="sticky top-0 z-50 border-b bg-background px-4">
-            <div className="flex h-16 items-center gap-4">
+          <header className="sticky top-0 z-50 border-b bg-background">
+            <div className="flex h-16 items-center gap-4 px-6">
               <div className="flex flex-1">
-                {/* CHANGE TO SEARCH BAR */}
-                <h1 className="text-xl font-semibold">Search</h1>
-                {/* CHANGE TO SEARCH BAR */}
+                <Search />
               </div>
               <ModeToggle mode={mode} setMode={setMode} />
               <button className="relative">
@@ -72,7 +71,9 @@ export default function DashboardPage() {
             </div>
           </header>
 
-          <main className="flex-1 space-y-4 p-8 pt-6">
+          <main className="flex-1 space-y-4 p-4 pt-6">
+            {" "}
+            {/* Updated padding here */}
             <div className="flex items-center justify-between space-y-2">
               <h2 className="text-3xl font-bold tracking-tight">
                 {mode === "captain" ? "Captain Dashboard" : "Owner Dashboard"}
