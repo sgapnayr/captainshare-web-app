@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Home, Calendar, Briefcase } from "lucide-react";
+import { useSidebar } from "@/components/ui/sidebar";
 
 interface MainNavProps {
   mode: "captain" | "owner";
@@ -12,6 +13,7 @@ interface MainNavProps {
 
 export function MainNav({ mode }: MainNavProps) {
   const pathname = usePathname();
+  const { setOpenMobile } = useSidebar();
 
   const routes = [
     {
@@ -34,7 +36,11 @@ export function MainNav({ mode }: MainNavProps) {
   return (
     <nav className="flex flex-col gap-2 p-4">
       {routes.map((route) => (
-        <Link key={route.href} href={route.href}>
+        <Link
+          key={route.href}
+          href={route.href}
+          onClick={() => setOpenMobile(false)}
+        >
           <Button
             variant="ghost"
             className={cn(
